@@ -55,20 +55,29 @@
           <%% } %>
       <%% } %>
       
+      <select data-toy-id=<%%= toy.get("id") %> data-pokemon-id=<%%= toy.get("pokemon_id") %>>
+         <%% pokes.each(function (pokemon) { %>
+           <option value = <%%= pokemon.get("id")%>
+             <%% if (pokemon.get("id") == toy.get("pokemon_id")){ %>
+                selected
+             <%% } %>
+             
+             
+             >
+             <%%= pokemon.get("name")%>
+           </option>
+        <%% }) %>
+      </select>
+      
     </div>
 </script>
 
 <!-- Pokedex.RootView.prototype.renderToyDetail = function (toy) { // III
   
-
-  // Phase III
-  var $pokemonSelect = $('<select>');
-  $pokemonSelect.data("pokemon-id", toy.get("pokemon_id"));
   $pokemonSelect.data("toy-id", toy.id);
   this.pokes.each(function (pokemon) {
     var $pokemonOption = $('<option>');
     $pokemonOption.attr("value", pokemon.id);
-    $pokemonOption.text(pokemon.get("name"));
     if (pokemon.id == toy.get("pokemon_id")) {
       $pokemonOption.prop("selected", true);
     }
