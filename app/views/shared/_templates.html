@@ -22,9 +22,24 @@
         <%% } %>
     <%% } %> 
   </div>
+  <span style="font-weight: bold;">Toys:</span> <br>
+  <ul class="toys">
+  </ul>
 </script>
 
 <script type="text/template" id="toy-list-item-template">
+  <li class="toy-list-item" data-id=<%%= toy.get("id") %>
+     data-pokemon-id= <%%= toy.get("pokemon_id") %>>
+    name:
+    <%%= toy.get("name") %>
+    <br>
+    happiness:
+     <%%= toy.get("happiness") %>
+     <br>
+     price:
+      <%%= toy.get("price") %>
+      <br>
+    </li>
 </script>
 
 <script type="text/template" id="toy-detail-template">
